@@ -1,4 +1,4 @@
-module kobiz-common-lib
+module github.com/espeniel76/kobiz-common-lib
 
 go 1.24.0
 
