@@ -93,4 +93,6 @@ const (
 	ALREADY_EXIST_NICKNAME         = "ALREADY_EXIST_NICKNAME"         // 이미 존재하는 닉네임입니다.
 	FAIL_UPLOAD_S3                 = "FAIL_UPLOAD_S3"                 // S3 파일 업로드 전송 실패
 	NO_EXIST_ACCOUNT               = "NO_EXIST_ACCOUNT"               // 계정이 존재하지 않습니다.
+	BLANK_VALUE                    = "BLANK_VALUE"
+	CREATE_TOKEN_ERROR             = "CREATE_TOKEN_ERROR"
 )
