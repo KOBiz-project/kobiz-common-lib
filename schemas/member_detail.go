@@ -8,26 +8,19 @@ import (
 
 type MemberDetail struct {
 	gorm.Model
-	IDMember         int64     `gorm:"unique" json:"id_member"`
+	IDMember         int64     `gorm:"unique" json:"idMember"`
 	Email            string    `gorm:"type:varchar(1024)" json:"email"`
 	Name             string    `gorm:"type:varchar(50)" json:"name"`
-	NickName         string    `gorm:"type:varchar(50);unique;column:nick_name" json:"nick_name"`
-	ProfilePhoto     string    `gorm:"type:varchar(1024)" json:"profile_photo"`
+	NickName         string    `gorm:"type:varchar(50);unique;column:nick_name" json:"nickName"`
+	ProfilePhoto     string    `gorm:"type:varchar(1024)" json:"profilePhoto"`
 	Tel              string    `gorm:"type:varchar(50)" json:"tel"`
-	MobileCompany    int8      `gorm:"default:0" json:"mobile_company"`
+	MobileCompany    int8      `gorm:"default:0" json:"mobileCompany"`
 	Mobile           string    `gorm:"type:varchar(50)" json:"mobile"`
 	Address          string    `gorm:"type:varchar(1024)" json:"address"`
-	AddressDetail    string    `gorm:"type:varchar(1024)" json:"address_detail"`
+	AddressDetail    string    `gorm:"type:varchar(1024)" json:"addressDetail"`
 	Zipcode          string    `gorm:"type:varchar(50)" json:"zipcode"`
-	AuthenticationCi string    `gorm:"type:varchar(255)" json:"authentication_ci"`
-	AuthenticationAt time.Time `json:"authentication_at"`
-	AltNewEvent      bool      `gorm:"default:false" json:"alt_new_event"`
-	AltSuccessfulBid bool      `gorm:"default:false" json:"alt_successful_bid"`
-	AltNewContent    bool      `gorm:"default:false" json:"alt_new_content"`
-	AltNightPush     bool      `gorm:"default:false" json:"alt_night_push"`
-	JoinScore        int64     `gorm:"default:0" json:"join_score"`
-	Like             int64     `gorm:"default:0" json:"like"`
-	Hate             int64     `gorm:"default:0" json:"hate"`
+	AuthenticationCi string    `gorm:"type:varchar(255)" json:"authenticationCi"`
+	AuthenticationAt time.Time `json:"authenticationAt"`
 }
 
 func (MemberDetail) TableName() string {
