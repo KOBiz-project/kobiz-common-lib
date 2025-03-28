@@ -6,7 +6,7 @@ import (
 
 type Model struct {
 	gorm.Model
-	ModelName     string `gorm:"column:model_name;not null;type:varchar(256);comment:'모델 명'" json:"modelName"`
+	NameModel     string `gorm:"column:name_model;not null;type:varchar(256);comment:'모델 명'" json:"nameModel"`
 	Description   string `gorm:"column:description;type:text;comment:'모델 설명'" json:"description"`
 	IdCompany     int    `gorm:"column:id_company;not null;comment:'제조사 고유 아이디'" json:"idCompany"`
 	NameCompany   string `gorm:"column:name_company;not null;type:varchar(256);comment:'제조사 명'" json:"nameCompany"`
