@@ -39,6 +39,7 @@ type Model struct {
 	Color3        string `gorm:"column:color3;type:varchar(256);comment:'색상 3'" json:"color3"`
 	Color3HexCode string `gorm:"column:color3_hex_code;type:varchar(256);comment:'색상 3 Hex Code'" json:"color3HexCode"`
 	Color3Photo   string `gorm:"column:color3_photo;type:varchar(512);comment:'색상 3 폰 이미지'" json:"color3Photo"`
+	ActiveYn      bool   `gorm:"column:active_yn;default:false" json:"activeYn"`
 }
 
 func (Model) TableName() string {
