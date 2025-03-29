@@ -30,15 +30,6 @@ type Model struct {
 	Size1TCDSKT   string `gorm:"column:size_1t_cd_skt;type:varchar(256);comment:'용량 1TB SKT 모델 고유코드'" json:"size1TCDSKT"`
 	Size1TCDKT    string `gorm:"column:size_1t_cd_kt;type:varchar(256);comment:'용량 1TB KT 모델 고유코드'" json:"size1TCDKT"`
 	Size1TCDLGT   string `gorm:"column:size_1t_cd_lgt;type:varchar(256);comment:'용량 1TB LGT 모델 고유코드'" json:"size1TCDLGT"`
-	Color1        string `gorm:"column:color1;type:varchar(256);comment:'색상 1'" json:"color1"`
-	Color1HexCode string `gorm:"column:color1_hex_code;type:varchar(256);comment:'색상 1 Hex Code'" json:"color1HexCode"`
-	Color1Photo   string `gorm:"column:color1_photo;type:varchar(512);comment:'색상 1 폰 이미지'" json:"color1Photo"`
-	Color2        string `gorm:"column:color2;type:varchar(256);comment:'색상 2'" json:"color2"`
-	Color2HexCode string `gorm:"column:color2_hex_code;type:varchar(256);comment:'색상 2 Hex Code'" json:"color2HexCode"`
-	Color2Photo   string `gorm:"column:color2_photo;type:varchar(512);comment:'색상 2 폰 이미지'" json:"color2Photo"`
-	Color3        string `gorm:"column:color3;type:varchar(256);comment:'색상 3'" json:"color3"`
-	Color3HexCode string `gorm:"column:color3_hex_code;type:varchar(256);comment:'색상 3 Hex Code'" json:"color3HexCode"`
-	Color3Photo   string `gorm:"column:color3_photo;type:varchar(512);comment:'색상 3 폰 이미지'" json:"color3Photo"`
 	ActiveYn      bool   `gorm:"column:active_yn;default:false" json:"activeYn"`
 }
 
