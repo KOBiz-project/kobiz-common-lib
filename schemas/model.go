@@ -4,6 +4,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// 자체 모델 스키마
 type Model struct {
 	gorm.Model
 	NameModel     string `gorm:"column:name_model;not null;type:varchar(256);comment:'모델 명';uniqueIndex:idx_model_name" json:"nameModel"`
