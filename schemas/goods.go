@@ -9,6 +9,7 @@ type Goods struct {
 	gorm.Model
 	Telecom                 string `gorm:"column:telecom;not null;type:varchar(30);comment:'통신사'" json:"telecom"`
 	IdModel                 int64  `gorm:"column:id_model;not null;comment:'모델 고유 ID'" json:"idModel"`
+	CodeModel               string `gorm:"column:code_model;type:varchar(256);comment:'모델 고유코드'" json:"codeModel"`
 	Size                    string `gorm:"column:size;not null;type:varchar(10);comment:'기기용량 64GB/128GB/256GB/512GB/1TB'" json:"size"`
 	NumChg                  bool   `gorm:"column:num_chg;default:false;comment:'번호 이동 여부'" json:"numChg"`
 	NumChgIdPlan            int64  `gorm:"column:num_chg_id_plan;comment:'번호 이동 요금제 ID'" json:"numChgIdPlan"`
