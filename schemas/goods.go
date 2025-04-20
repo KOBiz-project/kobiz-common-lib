@@ -7,6 +7,7 @@ import (
 // 자체 상품 스키마
 type Goods struct {
 	gorm.Model
+	Telecom                 string `gorm:"column:telecom;not null;type:varchar(30);comment:'통신사'" json:"telecom"`
 	IdModel                 int    `gorm:"column:id_model;not null;comment:'모델 고유 아이디'" json:"idModel"`
 	Size                    string `gorm:"column:size;not null;type:varchar(10);comment:'기기용량 64GB/128GB/256GB/512GB/1TB'" json:"size"`
 	NumChg                  bool   `gorm:"column:num_chg;default:false;comment:'번호 이동 여부'" json:"numChg"`
