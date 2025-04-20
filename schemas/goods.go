@@ -11,7 +11,7 @@ type Goods struct {
 	IdModel                 int    `gorm:"column:id_model;not null;comment:'모델 고유 ID'" json:"idModel"`
 	Size                    string `gorm:"column:size;not null;type:varchar(10);comment:'기기용량 64GB/128GB/256GB/512GB/1TB'" json:"size"`
 	NumChg                  bool   `gorm:"column:num_chg;default:false;comment:'번호 이동 여부'" json:"numChg"`
-	NumChgIdPlan            int    `gorm:"column:num_chg_id_plan;type:comment:'번호 이동 요금제 ID'" json:"numChgIdPlan"`
+	NumChgIdPlan            int    `gorm:"column:num_chg_id_plan;comment:'번호 이동 요금제 ID'" json:"numChgIdPlan"`
 	NumChgSwitchSubsidy     int64  `gorm:"column:num_chg_switch_subsidy;type:bigint;comment:'번호 이동 전환지원금'" json:"numChgSwitchSubsidy"`
 	NumChgAddSubsidy        int64  `gorm:"column:num_chg_add_subsidy;type:bigint;comment:'번호 이동 추가지원금'" json:"numChgAddSubsidy"`
 	DeviceChg               bool   `gorm:"column:device_chg;default:false;comment:'기기 변경 여부'" json:"deviceChg"`
