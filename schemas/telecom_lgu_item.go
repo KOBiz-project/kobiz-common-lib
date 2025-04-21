@@ -9,6 +9,7 @@ type TelecomLGUItem struct {
 	PcUsgListImgeUrlAddr    string  `gorm:"column:pc_usg_list_imge_url_addr; type:varchar(1000); not null" json:"pcUsgListImgeUrlAddr"`
 	RlCoutDttm              string  `gorm:"column:rl_cout_dttm; type:varchar(20); not null" json:"rlCoutDttm"`
 	DlvrPrc                 int     `gorm:"column:dlvr_prc; type:int; not null" json:"dlvrPrc"`
+	UrcMblPpCd              string  `gorm:"column:urc_mbl_pp_cd;type:varchar(10)" json:"urcMblPpCd"`
 	SixPlanPuanSuptAmt      int     `gorm:"column:six_plan_puan_supt_amt; type:int; not null" json:"sixPlanPuanSuptAmt"`
 	SixPlanAddSuptAmt       int     `gorm:"column:six_plan_add_supt_amt; type:int; not null" json:"sixPlanAddSuptAmt"`
 	SixPlanCvrtSuptAmt      int     `gorm:"column:six_plan_cvrt_supt_amt; type:int; not null" json:"sixPlanCvrtSuptAmt"`
