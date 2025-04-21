@@ -3,7 +3,7 @@ package schemas
 import "time"
 
 /**
-SKT	KT	LGU
+통신사 SKT/KT/LGU
 모델코드	model_cd	hndset_model_nm	urc_trm_mdl_cd
 모델명	items.product_nm	items.pet_nm	items.urc_trm_mdl_nm
 용량	items.product_mem	-	-
@@ -13,6 +13,7 @@ SKT	KT	LGU
 */
 type CommonItem struct {
 	ID                 uint      `gorm:"primaryKey;autoIncrement"`
+	Telecom            string    `gorm:"column:telecom;not null;type:varchar(50);comment:'통신사'"`
 	CodeModel          string    `gorm:"column:code_model;not null;type:varchar(50);comment:'모델 코드';uniqueIndex:idx_code_model"`
 	NameModel          string    `gorm:"column:name_model;not null;type:varchar(256);comment:'모델 명'"`
 	Capacity           string    `gorm:"column:capacity;not null;type:varchar(50);comment:'용량'"`
@@ -27,13 +28,14 @@ func (CommonItem) TableName() string {
 }
 
 /**
-SKT	KT	LGU
+통신사 SKT/KT/LGU
 요금제명	groups.subscription_nm	items.ppl_nm	items.urc_mbl_pp_nm
 요금제코드	groups.subscription_id	items.ppl_id	items.urc_mbl_pp_cd
 기본요금	groups.basic_charge	items.puno_month_use_chage	items.urc_pp_basf_amt
 */
 type CommonPlan struct {
 	ID         uint      `gorm:"primaryKey;autoIncrement"`
+	Telecom    string    `gorm:"column:telecom;not null;type:varchar(50);comment:'통신사'"`
 	NamePlan   string    `gorm:"column:name_plan;not null;type:varchar(256);comment:'요금제 명'"`
 	CodePlan   string    `gorm:"column:code_plan;not null;type:varchar(256);comment:'요금제 코드';uniqueIndex:idx_code_plan"`
 	PriceBasic int       `gorm:"column:price_basic;not null;type:int;comment:'기본 요금'"`
