@@ -14,10 +14,10 @@ import "time"
 type CommonItem struct {
 	ID                 uint      `gorm:"primaryKey;autoIncrement"`
 	Telecom            string    `gorm:"column:telecom;not null;type:varchar(50);comment:'통신사'"`
-	CodeModel          string    `gorm:"column:code_model;not null;type:varchar(50);comment:'모델 코드';uniqueIndex:idx_code_model"`
+	CodeModel          string    `gorm:"column:code_model;not null;type:varchar(50);comment:'모델 코드';idx_code_model"`
 	NameModel          string    `gorm:"column:name_model;not null;type:varchar(256);comment:'모델 명'"`
 	Capacity           string    `gorm:"column:capacity;not null;type:varchar(50);comment:'용량'"`
-	CodePlan           string    `gorm:"column:code_plan;not null;type:varchar(50);comment:'요금제 코드';uniqueIndex:idx_code_plan"`
+	CodePlan           string    `gorm:"column:code_plan;not null;type:varchar(50);comment:'요금제 코드';idx_code_plan"`
 	PriceFactory       int       `gorm:"column:price_factory;not null;type:int;comment:'제조사 가격'"`
 	PricePublicSupport int       `gorm:"column:price_public_support;not null;type:int;comment:'공시지원금'"`
 	CreatedAt          time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP"`
@@ -37,7 +37,7 @@ type CommonPlan struct {
 	ID         uint      `gorm:"primaryKey;autoIncrement"`
 	Telecom    string    `gorm:"column:telecom;not null;type:varchar(50);comment:'통신사'"`
 	NamePlan   string    `gorm:"column:name_plan;not null;type:varchar(256);comment:'요금제 명'"`
-	CodePlan   string    `gorm:"column:code_plan;not null;type:varchar(256);comment:'요금제 코드';uniqueIndex:idx_code_plan"`
+	CodePlan   string    `gorm:"column:code_plan;not null;type:varchar(256);comment:'요금제 코드';idx_code_plan"`
 	PriceBasic int       `gorm:"column:price_basic;not null;type:int;comment:'기본 요금'"`
 	CreatedAt  time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP"`
 }
