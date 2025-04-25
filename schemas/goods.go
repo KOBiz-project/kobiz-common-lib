@@ -14,11 +14,11 @@ type Goods struct {
 	Size                        string `gorm:"column:size;not null;type:varchar(10);comment:'기기용량 64GB/128GB/256GB/512GB/1TB'" json:"size"`
 	NumChg                      bool   `gorm:"column:num_chg;default:false;comment:'번호 이동 여부'" json:"numChg"`
 	NumChgIdPlan                int64  `gorm:"column:num_chg_id_plan;comment:'번호 이동 요금제 ID'" json:"numChgIdPlan"`
-	NumChgCustomNamePlan        string `gorm:"column:num_cng_custom_name_plan;type:varchar(256);comment:'번호 이동 커스텀 요금제명';" json:"numChgCustomNamePlan"`
+	NumChgCustomNamePlan        string `gorm:"column:num_chg_custom_name_plan;type:varchar(256);comment:'번호 이동 커스텀 요금제명';" json:"numChgCustomNamePlan"`
 	NumChgSwitchSubsidy         int64  `gorm:"column:num_chg_switch_subsidy;type:bigint;comment:'번호 이동 전환지원금'" json:"numChgSwitchSubsidy"`
 	NumChgAddSubsidy            int64  `gorm:"column:num_chg_add_subsidy;type:bigint;comment:'번호 이동 추가지원금'" json:"numChgAddSubsidy"`
 	DeviceChg                   bool   `gorm:"column:device_chg;default:false;comment:'기기 변경 여부'" json:"deviceChg"`
-	DeviceChgCustomNamePlan     string `gorm:"column:device_cng_custom_name_plan;type:varchar(256);comment:'기기 변경 커스텀 요금제명';" json:"deviceChgCustomNamePlan"`
+	DeviceChgCustomNamePlan     string `gorm:"column:device_chg_custom_name_plan;type:varchar(256);comment:'기기 변경 커스텀 요금제명';" json:"deviceChgCustomNamePlan"`
 	DeviceChgIdPlan             int64  `gorm:"column:device_chg_id_plan;comment:'기기 변경 요금제 ID'" json:"deviceChgIdPlan"`
 	DeviceChgAddSubsidy         int64  `gorm:"column:device_chg_add_subsidy;type:bigint;comment:'기기 변경 추가지원금'" json:"deviceChgAddSubsidy"`
 	NewActivation               bool   `gorm:"column:new_activation;default:false;comment:'신규 개통 여부'" json:"newActivation"`
