@@ -26,6 +26,7 @@ type Goods struct {
 	NewActivationCustomNamePlan string `gorm:"column:new_activation_custom_name_plan;type:varchar(256);comment:'신규 개통 커스텀 요금제명';" json:"newActivationCustomNamePlan"`
 	NewActivationAddSubsidy     int64  `gorm:"column:new_activation_add_subsidy;type:bigint;comment:'신규 개통 추가지원금'" json:"newActivationAddSubsidy"`
 	SubsidyYn                   bool   `gorm:"column:subsidy_yn;default:false;comment:'공시지원 여부'" json:"subsidyYn"`
+	Description                 string `gorm:"column:description;type:text;comment:'상품 설명'" json:"description"`
 	ActiveYn                    bool   `gorm:"column:active_yn;default:false" json:"activeYn"`
 }
 
