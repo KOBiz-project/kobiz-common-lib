@@ -9,6 +9,8 @@ type Order struct {
 	IdMember            int    `gorm:"column:id_member;not null;comment:'회원 고유 아이디'" json:"idMember"`
 	IdGoods             int    `gorm:"column:id_goods;not null;comment:'상품 고유 아이디'" json:"idGoods"`
 	IdModel             int    `gorm:"column:id_model;not null;comment:'모델 고유 아이디'" json:"idModel"`
+	NameModel           string `gorm:"column:name_model;not null;type:varchar(256);comment:'모델명'" json:"nameModel"`
+	CustomNameModel     string `gorm:"column:custom_name_model;type:varchar(256);comment:'커스텀 모델명'" json:"customNameModel"`
 	IdColor             int    `gorm:"column:id_color;not null;comment:'색상 고유 아이디'" json:"idColor"`
 	ActivationType      int    `gorm:"column:activation_type;not null;comment:'가입 유형 (1: 번이, 2: 기변, 3: 신규)'" json:"activationType"`
 	PaymentType         int    `gorm:"column:payment_type;not null;comment:'결제 유형 (1: 24개월 할부, 2: 현금 완납)'" json:"paymentType"`
@@ -16,6 +18,7 @@ type Order struct {
 	NamePlan            string `gorm:"column:name_plan;type:varchar(256);comment:'요금제명';" json:"namePlan"`
 	CustomNamePlan      string `gorm:"column:custom_name_plan;type:varchar(256);comment:'커스텀 요금제명';" json:"customNamePlan"`
 	BasicPrice          int64  `gorm:"column:basic_price;not null;type:bigint;comment:'요금제 기본요금'" json:"basicPrice"`
+	PriceFactory        int64  `gorm:"column:price_factory;not null;type:bigint;comment:'출고가'" json:"priceFactory"`
 	Subsidy             int64  `gorm:"column:subsidy;not null;type:bigint;comment:'공시지원금'" json:"subsidy"`
 	SwitchSubsidy       int64  `gorm:"column:switch_subsidy;not null;type:bigint;comment:'전환지원금'" json:"switchSubsidy"`
 	AddSubsidy          int64  `gorm:"column:add_subsidy;not null;type:bigint;comment:'추가지원금'" json:"addSubsidy"`
