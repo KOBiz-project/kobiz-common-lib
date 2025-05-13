@@ -11,8 +11,8 @@ type Member struct {
 	SnsType      string `gorm:"column:sns_type;type:ENUM('KAKAO','GOOGLE'); default:'GOOGLE';comment:'SNS 로그인 타입';uniqueIndex:idx_user" json:"snsType"`
 	UserType     int    `gorm:"column:user_type;default:0;comment:'회원 유형 0: 미선택 1:기업회원 2: 일반회원'" json:"userType"`
 	UserDocument string `gorm:"column:user_document;type:varchar(512);comment:'가입 시 제출서류'" json:"userDocument"`
-	Memo1        string `gorm:"column:memo_2;type:varchar(255);comment:'짧은 메모 (회사명)'" json:"memo1"`
-	Memo2        string `gorm:"column:memo_1;type:text;comment:'긴 메모 (관리자 메모)'" json:"memo2"`
+	Memo1        string `gorm:"column:memo_1;type:varchar(255);comment:'짧은 메모 (회사명)'" json:"memo1"`
+	Memo2        string `gorm:"column:memo_2;type:text;comment:'긴 메모 (관리자 메모)'" json:"memo2"`
 	ActiveYn     bool   `gorm:"column:active_yn;default:false;comment:'관리자 승인 여부'" json:"activeYn"`
 }
 
