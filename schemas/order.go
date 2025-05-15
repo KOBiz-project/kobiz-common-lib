@@ -1,37 +1,40 @@
 package schemas
 
 import (
+	"time"
+
 	"gorm.io/gorm"
 )
 
 type Order struct {
 	gorm.Model
-	IdMember            int    `gorm:"column:id_member;not null;comment:'회원 고유 아이디'" json:"idMember"`
-	IdGoods             int    `gorm:"column:id_goods;not null;comment:'상품 고유 아이디'" json:"idGoods"`
-	IdModel             int    `gorm:"column:id_model;not null;comment:'모델 고유 아이디'" json:"idModel"`
-	NameModel           string `gorm:"column:name_model;not null;type:varchar(256);comment:'모델명'" json:"nameModel"`
-	CustomNameModel     string `gorm:"column:custom_name_model;type:varchar(256);comment:'커스텀 모델명'" json:"customNameModel"`
-	IdColor             int    `gorm:"column:id_color;not null;comment:'색상 고유 아이디'" json:"idColor"`
-	ActivationType      int    `gorm:"column:activation_type;not null;comment:'가입 유형 (1: 번이, 2: 기변, 3: 신규)'" json:"activationType"`
-	PaymentType         int    `gorm:"column:payment_type;not null;comment:'결제 유형 (1: 24개월 할부, 2: 현금 완납)'" json:"paymentType"`
-	IdPlan              int    `gorm:"column:id_plan;not null;comment:'요금제 고유 아이디'" json:"idPlan"`
-	NamePlan            string `gorm:"column:name_plan;type:varchar(256);comment:'요금제명';" json:"namePlan"`
-	CustomNamePlan      string `gorm:"column:custom_name_plan;type:varchar(256);comment:'커스텀 요금제명';" json:"customNamePlan"`
-	BasicPrice          int64  `gorm:"column:basic_price;not null;type:bigint;comment:'요금제 기본요금'" json:"basicPrice"`
-	PriceFactory        int64  `gorm:"column:price_factory;not null;type:bigint;comment:'출고가'" json:"priceFactory"`
-	Subsidy             int64  `gorm:"column:subsidy;not null;type:bigint;comment:'공시지원금'" json:"subsidy"`
-	SwitchSubsidy       int64  `gorm:"column:switch_subsidy;not null;type:bigint;comment:'전환지원금'" json:"switchSubsidy"`
-	AddSubsidy          int64  `gorm:"column:add_subsidy;not null;type:bigint;comment:'추가지원금'" json:"addSubsidy"`
-	FinalPrice          int64  `gorm:"column:final_price;not null;type:bigint;comment:'할부원금 (출고가에서 각종 지원금을 제한 금액)'" json:"finalPrice"`
-	InstallmentFee      int64  `gorm:"column:installment_fee;not null;type:bigint;comment:'할부 수수료 합계 (24개월)'" json:"installmentFee"`
-	MonthlyInstallment  int64  `gorm:"column:monthly_installment;not null;type:bigint;comment:'월 할부금(이자포함)'" json:"monthlyInstallment"`
-	TotalDiscountAmount int64  `gorm:"column:total_discount_amount;not null;type:bigint;comment:'총 할인 금액 (선택 약정)'" json:"totalDiscountAmount"`
-	FinalMonthlyPayment int64  `gorm:"column:final_monthly_payment;not null;type:bigint;comment:'최종 월 납부금'" json:"finalMonthlyPayment"`
-	NameCustomer        string `gorm:"column:name_customer;not null;comment:'고객명'" json:"nameCustomer"`
-	NumPhone            string `gorm:"column:num_phone;not null;comment:'개통할 번호'" json:"numPhone"`
-	NumPhoneExt         string `gorm:"column:num_phone_ext;not null;comment:'다른 연락처'" json:"numPhoneExt"`
-	Address             string `gorm:"column:address;not null;comment:'택배 주소'" json:"address"`
-	Memo                string `gorm:"column:memo;type:text;comment:'메모'" json:"memo"`
+	IdMember            int       `gorm:"column:id_member;not null;comment:'회원 고유 아이디'" json:"idMember"`
+	IdGoods             int       `gorm:"column:id_goods;not null;comment:'상품 고유 아이디'" json:"idGoods"`
+	IdModel             int       `gorm:"column:id_model;not null;comment:'모델 고유 아이디'" json:"idModel"`
+	NameModel           string    `gorm:"column:name_model;not null;type:varchar(256);comment:'모델명'" json:"nameModel"`
+	CustomNameModel     string    `gorm:"column:custom_name_model;type:varchar(256);comment:'커스텀 모델명'" json:"customNameModel"`
+	IdColor             int       `gorm:"column:id_color;not null;comment:'색상 고유 아이디'" json:"idColor"`
+	ActivationType      int       `gorm:"column:activation_type;not null;comment:'가입 유형 (1: 번이, 2: 기변, 3: 신규)'" json:"activationType"`
+	PaymentType         int       `gorm:"column:payment_type;not null;comment:'결제 유형 (1: 24개월 할부, 2: 현금 완납)'" json:"paymentType"`
+	IdPlan              int       `gorm:"column:id_plan;not null;comment:'요금제 고유 아이디'" json:"idPlan"`
+	NamePlan            string    `gorm:"column:name_plan;type:varchar(256);comment:'요금제명';" json:"namePlan"`
+	CustomNamePlan      string    `gorm:"column:custom_name_plan;type:varchar(256);comment:'커스텀 요금제명';" json:"customNamePlan"`
+	BasicPrice          int64     `gorm:"column:basic_price;not null;type:bigint;comment:'요금제 기본요금'" json:"basicPrice"`
+	PriceFactory        int64     `gorm:"column:price_factory;not null;type:bigint;comment:'출고가'" json:"priceFactory"`
+	Subsidy             int64     `gorm:"column:subsidy;not null;type:bigint;comment:'공시지원금'" json:"subsidy"`
+	SwitchSubsidy       int64     `gorm:"column:switch_subsidy;not null;type:bigint;comment:'전환지원금'" json:"switchSubsidy"`
+	AddSubsidy          int64     `gorm:"column:add_subsidy;not null;type:bigint;comment:'추가지원금'" json:"addSubsidy"`
+	FinalPrice          int64     `gorm:"column:final_price;not null;type:bigint;comment:'할부원금 (출고가에서 각종 지원금을 제한 금액)'" json:"finalPrice"`
+	InstallmentFee      int64     `gorm:"column:installment_fee;not null;type:bigint;comment:'할부 수수료 합계 (24개월)'" json:"installmentFee"`
+	MonthlyInstallment  int64     `gorm:"column:monthly_installment;not null;type:bigint;comment:'월 할부금(이자포함)'" json:"monthlyInstallment"`
+	TotalDiscountAmount int64     `gorm:"column:total_discount_amount;not null;type:bigint;comment:'총 할인 금액 (선택 약정)'" json:"totalDiscountAmount"`
+	FinalMonthlyPayment int64     `gorm:"column:final_monthly_payment;not null;type:bigint;comment:'최종 월 납부금'" json:"finalMonthlyPayment"`
+	NameCustomer        string    `gorm:"column:name_customer;not null;comment:'고객명'" json:"nameCustomer"`
+	NumPhone            string    `gorm:"column:num_phone;not null;comment:'개통할 번호'" json:"numPhone"`
+	NumPhoneExt         string    `gorm:"column:num_phone_ext;not null;comment:'다른 연락처'" json:"numPhoneExt"`
+	Address             string    `gorm:"column:address;not null;comment:'택배 주소'" json:"address"`
+	BirthDate           time.Time `gorm:"column:birth_date;not null;comment:'생년월일'" json:"birthDate"`
+	Memo                string    `gorm:"column:memo;type:text;comment:'메모'" json:"memo"`
 }
 
 func (Order) TableName() string {
