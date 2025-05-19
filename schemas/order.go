@@ -31,7 +31,7 @@ type Order struct {
 	NumPhone            string `gorm:"column:num_phone;not null;comment:'개통할 번호'" json:"numPhone"`
 	NumPhoneExt         string `gorm:"column:num_phone_ext;not null;comment:'다른 연락처'" json:"numPhoneExt"`
 	Address             string `gorm:"column:address;not null;comment:'택배 주소'" json:"address"`
-	BirthDate           string `gorm:"column:birth_date;type:cahr(8);not null;comment:'생년월일'" json:"birthDate"`
+	BirthDate           string `gorm:"column:birth_date;type:char(8);not null;comment:'생년월일'" json:"birthDate"`
 	Memo                string `gorm:"column:memo;type:text;comment:'메모'" json:"memo"`
 }
 
