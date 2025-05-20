@@ -9,10 +9,13 @@ type Order struct {
 	IdMember            int    `gorm:"column:id_member;not null;comment:'회원 고유 아이디'" json:"idMember"`
 	IdGoods             int    `gorm:"column:id_goods;not null;comment:'상품 고유 아이디'" json:"idGoods"`
 	IdModel             int    `gorm:"column:id_model;not null;comment:'모델 고유 아이디'" json:"idModel"`
+	Telecom             string `gorm:"column:telecom;not null;type:varchar(30);comment:'통신사'" json:"telecom"`
 	NameModel           string `gorm:"column:name_model;not null;type:varchar(256);comment:'모델명'" json:"nameModel"`
 	CustomNameModel     string `gorm:"column:custom_name_model;type:varchar(256);comment:'커스텀 모델명'" json:"customNameModel"`
+	Size                string `gorm:"column:size;not null;type:varchar(10);comment:'기기용량 64GB/128GB/256GB/512GB/1TB'" json:"size"`
 	IdColor             int    `gorm:"column:id_color;not null;comment:'색상 고유 아이디'" json:"idColor"`
 	ActivationType      int    `gorm:"column:activation_type;not null;comment:'가입 유형 (1: 번이, 2: 기변, 3: 신규)'" json:"activationType"`
+	SubsidyYn           bool   `gorm:"column:subsidy_yn;default:false;comment:'공시지원 여부'" json:"subsidyYn"`
 	PaymentType         int    `gorm:"column:payment_type;not null;comment:'결제 유형 (1: 24개월 할부, 2: 현금 완납)'" json:"paymentType"`
 	IdPlan              int    `gorm:"column:id_plan;not null;comment:'요금제 고유 아이디'" json:"idPlan"`
 	NamePlan            string `gorm:"column:name_plan;type:varchar(256);comment:'요금제명';" json:"namePlan"`
