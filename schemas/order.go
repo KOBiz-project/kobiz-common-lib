@@ -33,7 +33,7 @@ type Order struct {
 	TotalDiscountAmount int64     `gorm:"column:total_discount_amount;not null;type:bigint;comment:'총 할인 금액 (선택 약정)'" json:"totalDiscountAmount"`
 	FinalMonthlyPayment int64     `gorm:"column:final_monthly_payment;not null;type:bigint;comment:'최종 월 납부금'" json:"finalMonthlyPayment"`
 	Status              int       `gorm:"column:status;not null;default:1;comment:'주문 상태 (1: 접수 완료, 2: 접수 확인, 3: URL 완료, 4: URL 및 발송 완료, 5: 개통 완료, 6: 반품 처리 중, 7: 반품 완료)'" json:"status"`
-	ActivationDt        time.Time `gorm:"column:activation_dt;type:date;comment:'개통일자'" json:"activationDt"`
+	ActivationDt        time.Time `gorm:"column:activation_dt;default:null;type:date;comment:'개통일자'" json:"activationDt"`
 	ReturnsReason       string    `gorm:"column:returns_reason;type:text;comment:'반품 사유'" json:"returnsReason"`
 	NameCustomer        string    `gorm:"column:name_customer;not null;comment:'고객명'" json:"nameCustomer"`
 	NumPhone            string    `gorm:"column:num_phone;not null;comment:'개통할 번호'" json:"numPhone"`
