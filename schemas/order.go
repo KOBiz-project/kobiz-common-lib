@@ -35,10 +35,13 @@ type Order struct {
 	Status              int        `gorm:"column:status;not null;default:1;comment:'주문 상태 (1: 접수 완료, 2: 접수 확인, 3: URL 완료, 4: URL 및 발송 완료, 5: 개통 완료, 6: 반품 처리 중, 7: 반품 완료)'" json:"status"`
 	ActivationDt        *time.Time `gorm:"column:activation_dt;default:null;type:date;comment:'개통일자'" json:"activationDt"`
 	ReturnsReason       string     `gorm:"column:returns_reason;type:text;comment:'반품 사유'" json:"returnsReason"`
+	CustomerType        int        `gorm:"column:customer_type;not null;comment:'가입자 유형 (1: 개인, 2: 가족)'" json:"customerType"`
+	NameEmployee        string     `gorm:"column:name_employee;comment:'임직원 성함'" json:"nameEmployee"`
+	NumPhoneEmployee    string     `gorm:"column:num_phone_employee;comment:'임직원 연락처'" json:"numPhoneEmployee"`
 	NameCustomer        string     `gorm:"column:name_customer;not null;comment:'고객명'" json:"nameCustomer"`
 	NumPhone            string     `gorm:"column:num_phone;not null;comment:'개통할 번호'" json:"numPhone"`
-	NumPhoneExt         string     `gorm:"column:num_phone_ext;not null;comment:'다른 연락처'" json:"numPhoneExt"`
-	Address             string     `gorm:"column:address;not null;comment:'택배 주소'" json:"address"`
+	NumPhoneExt         string     `gorm:"column:num_phone_ext;comment:'다른 연락처'" json:"numPhoneExt"`
+	Address             string     `gorm:"column:address;comment:'택배 주소'" json:"address"`
 	BirthDate           string     `gorm:"column:birth_date;type:char(8);not null;comment:'생년월일'" json:"birthDate"`
 	Memo                string     `gorm:"column:memo;type:text;comment:'메모'" json:"memo"`
 }
