@@ -8,6 +8,7 @@ import (
 type Goods struct {
 	gorm.Model
 	Telecom                     string `gorm:"column:telecom;not null;type:varchar(30);comment:'통신사'" json:"telecom"`
+	IdGroup                     int    `gorm:"column:id_group;not null;comment:'회원 그룹 아이디'" json:"idGroup"`
 	IdModel                     int64  `gorm:"column:id_model;not null;comment:'모델 고유 ID'" json:"idModel"`
 	CustomNameModel             string `gorm:"column:custom_name_model;type:varchar(256);comment:'커스텀 모델명'" json:"customNameModel"`
 	CodeModel                   string `gorm:"column:code_model;type:varchar(256);comment:'모델 고유코드'" json:"codeModel"`
