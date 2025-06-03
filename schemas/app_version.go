@@ -16,10 +16,10 @@ type AppVersion struct {
 	Description string    `gorm:"column:description;type:varchar(255);comment:버전 설명" json:"description"`
 	IsForce     bool      `gorm:"column:is_force;not null;default:false;comment:강제 업데이트 여부" json:"isForce"`
 	IsActive    bool      `gorm:"column:is_active;not null;default:false;comment:활성화 상태 여부" json:"isActive"`
-	ApplyAt     time.Time `gorm:"column:apply_at;type:timestamptz;comment:버전 적용 시간" json:"applyAt"`
-	EffectiveAt time.Time `gorm:"column:effective_at;type:timestamptz;comment:버전 적용 시작 시간" json:"effectiveAt"`
+	ApplyAt     time.Time `gorm:"column:apply_at;type:datetime;comment:버전 적용 시간" json:"applyAt"`
+	EffectiveAt time.Time `gorm:"column:effective_at;type:datetime;comment:버전 적용 시작 시간" json:"effectiveAt"`
 }
 
 func (AppVersion) TableName() string {
-	return "app_versions"
+	return "app_version"
 }
