@@ -12,8 +12,8 @@ type OrderInternet struct {
 	SpeedType       int    `gorm:"column:speed_type;not null;comment:'인터넷 속도 유형 (1: 100 Mbps, 2: 500 Mbps, 3: 1 Gbps)'" json:"speedType"`
 	TvType          string `gorm:"column:tv_type;not null;type:varchar(30);comment:'TV 유형'" json:"tvType"`
 	CombineYn       bool   `gorm:"column:combine_yn;default:false;comment:'휴대폰 결합 여부'" json:"combineYn"`
-	CombinedPrice   int64  `gorm:"column:combined_price;type:bigint;comment:'결합 시 금액'" json:"combinedPrice"`
-	UncombinedPrice int64  `gorm:"column:uncombined_price;type:bigint;comment:'미결합 시 금액'" json:"uncombinedPrice"`
+	CombinedPrice   int64  `gorm:"column:combined_price;type:bigint;comment:'결합 금액'" json:"combinedPrice"`
+	UncombinedPrice int64  `gorm:"column:uncombined_price;type:bigint;comment:'미결합 금액'" json:"uncombinedPrice"`
 	Subsidy         int64  `gorm:"column:subsidy;type:bigint;comment:'지원금'" json:"subsidy"`
 }
 
