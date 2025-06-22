@@ -44,6 +44,7 @@ type Order struct {
 	Address             string     `gorm:"column:address;comment:'택배 주소'" json:"address"`
 	BirthDate           string     `gorm:"column:birth_date;type:char(8);not null;comment:'생년월일'" json:"birthDate"`
 	Memo                string     `gorm:"column:memo;type:text;comment:'메모'" json:"memo"`
+	MemoAdmin           string     `gorm:"column:memo_admin;type:text;comment:'관리자 메모'" json:"memoAdmin"`
 	IdManager           int        `gorm:"column:id_manager;comment:'담당자 고유 아이디'" json:"idManager"`
 	IdReception         int        `gorm:"column:id_reception;comment:'개통처 고유 아이디'" json:"idReception"`
 }
