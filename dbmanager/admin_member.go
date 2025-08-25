@@ -16,5 +16,5 @@ type AdminMember struct {
 }
 
 func (AdminMember) TableName() string {
-	return "member_admins"
+	return "admin_members"
 }
