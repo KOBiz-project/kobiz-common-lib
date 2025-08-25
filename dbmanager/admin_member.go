@@ -11,7 +11,7 @@ type AdminMember struct {
 	Name         string `gorm:"type:varchar(50);comment:'실명'" json:"name"`
 	NickName     string `gorm:"type:varchar(50);unique;column:nick_name;comment:'닉네임'" json:"nickName"`
 	Email        string `gorm:"type:varchar(255);unique;comment:'이메일 주소'" json:"email"`
-	Phone        string `gorm:"type:varchar(20);unique;comment:'전화번호'" json:"phone"`
+	Phone        string `gorm:"type:varchar(20);uniqueIndex:idx_admin_member_phone;comment:'전화번호'" json:"phone"`
 	ProfileImage string `gorm:"type:varchar(1024);comment:'프로필 이미지 URL'" json:"profileImage"`
 }
 
