@@ -8,7 +8,7 @@ import (
 type AdminLevel struct {
 	gorm.Model
 	// UserLevel 사용자 등급 (1:최고관리자, 2:일반관리자, 3:팀관리자, 4:팀원)
-	UserLevel int8 `gorm:"column:level;not null;type:default:4;comment:'등급(1:최고관리자,2:일반관리자,3:팀관리자,4:팀원)'" json:"userLevel"`
+	UserLevel int8 `gorm:"column:level;not null;default:4;comment:'등급(1:최고관리자,2:일반관리자,3:팀관리자,4:팀원)'" json:"userLevel"`
 	// PermissionAll 전체/원본 데이터 접근 권한
 	PermissionAll bool `gorm:"column:permission_all;default:false;comment:'전체/원본 권한'" json:"permissionAll"`
 	// PermissionDupDb 중복 데이터베이스 관리 권한
