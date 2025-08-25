@@ -13,7 +13,7 @@ type AdminMember struct {
 	Email        string `gorm:"type:varchar(255);unique;column:email;comment:'이메일 주소'" json:"email"`
 	Phone        string `gorm:"type:varchar(20);unique;column:phone;comment:'전화번호'" json:"phone"`
 	ProfileImage string `gorm:"type:varchar(1024);comment:'프로필 이미지 URL'" json:"profileImage"`
-	IdAdminTeam  uint   `gorm:"column:admin_team;comment:'관리자 팀 번호'" json:"adminTeam"`
+	IdAdminTeam  uint   `gorm:"column:id_admin_team;comment:'관리자 팀 번호'" json:"adminTeam"`
 }
 
 func (AdminMember) TableName() string {
