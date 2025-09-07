@@ -7,8 +7,10 @@ import (
 // AdminRolePermissions 관리자 역할별 권한 설정 테이블
 type AdminRolePermissions struct {
 	gorm.Model
-	// RoleType 관리자 역할 유형 (1:최고관리자, 2:일반관리자, 3:팀관리자)
-	RoleType int8 `gorm:"column:role_type;not null;comment:'관리자 역할 유형 (1:최고관리자, 2:일반관리자, 3:팀관리자)'" json:"roleType"`
+	// RoleType 관리자 역할 유형 (1~10 범위)
+	RoleType int8 `gorm:"column:role_type;not null;comment:'관리자 역할 유형 (1~10 범위)'" json:"roleType"`
+	// RoleName 역할명
+	RoleName string `gorm:"column:role_name;type:varchar(100);not null;comment:'역할명'" json:"roleName"`
 
 	// 채널 설정 권한들
 	ChannelCreate      bool `gorm:"column:channel_create;default:false;comment:'채널 생성 권한'" json:"channelCreate"`
@@ -46,8 +48,10 @@ type UserSpecificPermissions struct {
 	gorm.Model
 	// AdminMemberID 관리자 회원 ID
 	IDAdminMember uint `gorm:"column:id_admin_member;not null;comment:'관리자 회원 ID'" json:"IdAdminMember"`
-	// RoleType 관리자 역할 유형 (1:최고관리자, 2:일반관리자, 3:팀관리자)
-	RoleType int8 `gorm:"column:role_type;not null;comment:'관리자 역할 유형 (1:최고관리자, 2:일반관리자, 3:팀관리자)'" json:"roleType"`
+	// RoleType 관리자 역할 유형 (1~10 범위)
+	RoleType int8 `gorm:"column:role_type;not null;comment:'관리자 역할 유형 (1~10 범위)'" json:"roleType"`
+	// RoleName 역할명
+	RoleName string `gorm:"column:role_name;type:varchar(100);not null;comment:'역할명'" json:"roleName"`
 
 	// 채널 설정 권한들
 	ChannelCreate      bool `gorm:"column:channel_create;default:false;comment:'채널 생성 권한'" json:"channelCreate"`
