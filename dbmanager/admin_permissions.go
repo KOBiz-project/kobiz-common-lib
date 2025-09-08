@@ -83,3 +83,30 @@ type UserSpecificPermissions struct {
 func (UserSpecificPermissions) TableName() string {
 	return "user_specific_permissions"
 }
+
+// MenuCategory 메뉴 권한 분류 테이블
+type MenuCategory struct {
+	gorm.Model
+	Name     string `gorm:"column:name;type:varchar(100);not null" json:"name" comment:"메뉴명"`
+	Desc     string `gorm:"column:desc;type:varchar(255);default:''" json:"desc" comment:"설명"`
+	ActiveYn bool   `gorm:"column:active_yn;type:boolean;default:false" json:"active_yn" comment:"활성여부"`
+}
+
+// TableName 테이블명 반환
+func (MenuCategory) TableName() string {
+	return "menu_categories"
+}
+
+// MenuPermission 메뉴 권한 테이블
+type MenuPermission struct {
+	gorm.Model
+	IDMenuCategory uint   `gorm:"column:id_menu_category;not null" json:"idMenuCategory" comment:"메뉴분류인덱스"`
+	Name           string `gorm:"column:name;type:varchar(100);not null" json:"name" comment:"권한명"`
+	Desc           string `gorm:"column:desc;type:varchar(255);default:''" json:"desc" comment:"설명"`
+	ActiveYn       bool   `gorm:"column:active_yn;type:boolean;default:false" json:"active_yn" comment:"활성여부"`
+}
+
+// TableName 테이블명 반환
+func (MenuPermission) TableName() string {
+	return "menu_permissions"
+}
