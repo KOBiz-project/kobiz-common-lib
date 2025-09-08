@@ -110,3 +110,16 @@ type MenuPermission struct {
 func (MenuPermission) TableName() string {
 	return "menu_permissions"
 }
+
+// UserMenuPermission 사용자 메뉴 권한 테이블
+type UserMenuPermission struct {
+	gorm.Model
+	ID               uint `gorm:"column:id;primaryKey" json:"id" comment:"사용자 권한 인덱스"`
+	IDMenuPermission uint `gorm:"column:id_munu_permission;not null" json:"idMenuPermission" comment:"메뉴 인덱스"`
+	IDAdminMember    uint `gorm:"column:id_admin_member;not null" json:"idAdminMember" comment:"관리자 인덱스"`
+}
+
+// TableName 테이블명 반환
+func (UserMenuPermission) TableName() string {
+	return "user_menu_permissions"
+}
