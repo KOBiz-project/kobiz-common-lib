@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": -318,
+    "scrollTop": -2,
+    "scrollLeft": -305.0856,
     "zoomLevel": 1,
     "show": 431,
     "database": 4,
@@ -33,7 +33,8 @@
     "tableIds": [
       "7AmTRIOuG08UpbRepPI6i",
       "Y1yFnR_WOi7M4mpR1fz7I",
-      "9GsBT5PqZVb5TSzfy3cf4"
+      "9GsBT5PqZVb5TSzfy3cf4",
+      "EwUoPRSkA1z4Pe-TwrOdk"
     ],
     "relationshipIds": [
       "zaIbah9gGPgTipRRTlkor",
@@ -136,6 +137,31 @@
         "meta": {
           "updateAt": 1757371233628,
           "createAt": 1757370612581
+        }
+      },
+      "EwUoPRSkA1z4Pe-TwrOdk": {
+        "id": "EwUoPRSkA1z4Pe-TwrOdk",
+        "name": "level_permissions",
+        "comment": "레벨별 권한 (저녁에 구상)",
+        "columnIds": [
+          "tHnJH7gl6O1RTl12nuSjs",
+          "1MaqzRCTL3Zr7WNaDTjTf"
+        ],
+        "seqColumnIds": [
+          "tHnJH7gl6O1RTl12nuSjs",
+          "1MaqzRCTL3Zr7WNaDTjTf"
+        ],
+        "ui": {
+          "x": 356,
+          "y": 881,
+          "zIndex": 103,
+          "widthName": 94,
+          "widthComment": 139,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1757374096308,
+          "createAt": 1757373972871
         }
       }
     },
@@ -518,6 +544,46 @@
         "meta": {
           "updateAt": 1757371119503,
           "createAt": 1757371093805
+        }
+      },
+      "tHnJH7gl6O1RTl12nuSjs": {
+        "id": "tHnJH7gl6O1RTl12nuSjs",
+        "tableId": "EwUoPRSkA1z4Pe-TwrOdk",
+        "name": "id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1757374054026,
+          "createAt": 1757374051289
+        }
+      },
+      "1MaqzRCTL3Zr7WNaDTjTf": {
+        "id": "1MaqzRCTL3Zr7WNaDTjTf",
+        "tableId": "EwUoPRSkA1z4Pe-TwrOdk",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1757374055120,
+          "createAt": 1757374055120
         }
       }
     },
