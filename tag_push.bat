@@ -1,15 +1,14 @@
 @echo off
-setlocal enabledelayedexpansion
-
-for /f "tokens=*" %%i in ('git describe --tags --abbrev^=0 2^>nul') do set "LATEST_TAG=%%i"
-
-if not defined LATEST_TAG (
-    echo No tags found in repository
+if "%1"=="" (
+    echo Usage: tag_push.bat ^<tag_name^>
+    echo Example: tag_push.bat v1.0.0
     exit /b 1
 )
 
-echo Latest tag found: !LATEST_TAG!
-echo Pushing tag !LATEST_TAG! to origin...
-git push origin "!LATEST_TAG!"
+echo Creating git tag: %1
+git tag %1
+
+echo Pushing tag %1 to origin...
+git push origin %1
 
 echo Done!
