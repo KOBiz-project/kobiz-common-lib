@@ -7,7 +7,6 @@ import (
 // Channel 채널 설정 테이블
 type Channel struct {
 	ID               uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	IdChannelGroup   uint      `gorm:"column:id_channel_group;not null;type:int;default:0;comment:'채널 그룹 ID'" json:"idChannelGroup"`
 	Name             string    `gorm:"column:name;not null;type:varchar(100);comment:'채널명';uniqueIndex:idx_channel_name" json:"name"`
 	Description      string    `gorm:"column:description;type:varchar(255);comment:'채널 설명'" json:"description"`
 	IdAdminTeam      uint      `gorm:"column:id_admin_team;not null;type:int;comment:'배정 관리자 팀 ID'" json:"idAdminTeam"`
@@ -51,15 +50,12 @@ func (ChannelChannelGroup) TableName() string {
 
 // 신청서 항목 설정 테이블
 type ApplicationItem struct {
-	ID              uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	Name            string    `gorm:"column:name;not null;type:varchar(100);comment:'항목명'" json:"name"`
-	Description     string    `gorm:"column:description;type:varchar(255);comment:'항목 설명'" json:"description"`
-	Type            int8      `gorm:"column:type;not null;type:tinyint;comment:'항목 타입(0: 텍스트, 1: 숫자, 2: 날짜, 3: 체크박스, 4: 라디오, 5: 드롭다운)'" json:"type"`
-	TypePlaceHolder string    `gorm:"column:type_place_holder;type:varchar(100);comment:'항목 타입 플레이스홀더'" json:"typePlaceHolder"`
-	TypeMaxValue    int       `gorm:"column:type_max_value;not null;type:int;comment:'항목 최대 값'" json:"typeMaxValue"`
-	TypeMinValue    int       `gorm:"column:type_min_value;not null;type:int;comment:'항목 최소 값'" json:"typeMinValue"`
-	TypeRequired    bool      `gorm:"column:type_required;not null;type:boolean;default:false;comment:'항목 필수 여부'" json:"typeRequired"`
-	ActiveYn        bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
-	CreatedAt       time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
-	UpdatedAt       time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+	ID           uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	Name         string    `gorm:"column:name;not null;type:varchar(100);comment:'항목명'" json:"name"`
+	Description  string    `gorm:"column:description;type:varchar(255);comment:'항목 설명'" json:"description"`
+	Type         int8      `gorm:"column:type;not null;type:tinyint;comment:'항목 타입(0: 텍스트, 1: 숫자, 2: 날짜, 3: 체크박스, 4: 라디오, 5: 드롭다운)'" json:"type"`
+	TypeRequired bool      `gorm:"column:type_required;not null;type:boolean;default:false;comment:'항목 필수 여부'" json:"typeRequired"`
+	ActiveYn     bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
+	CreatedAt    time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
+	UpdatedAt    time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 }
