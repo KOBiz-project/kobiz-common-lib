@@ -40,6 +40,9 @@ type ChannelChannelGroup struct {
 	ID             uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	ChannelID      uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
 	ChannelGroupID uint      `gorm:"column:channel_group_id;not null;type:int;comment:'그룹 ID';index" json:"channelGroupId"`
+	MainImageUrl   string    `gorm:"column:main_image_url;type:varchar(255);comment:'메인이미지 주소'" json:"mainImageUrl"`
+	SubImageUrl    string    `gorm:"column:sub_image_url;type:varchar(255);comment:'서브이미지 주소'" json:"subImageUrl"`
+	ButtonText     string    `gorm:"column:button_text;type:varchar(255);comment:'버튼 문구'" json:"buttonText"`
 	CreatedAt      time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
 	UpdatedAt      time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 }
@@ -60,24 +63,19 @@ type ApplicationItem struct {
 	UpdatedAt    time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 }
 
-// 신청폼 설정 테이블
-type ApplicationForm struct {
-	ID           uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	Name         string    `gorm:"column:name;not null;type:varchar(100);comment:'폼명'" json:"name"`
-	Description  string    `gorm:"column:description;type:varchar(255);comment:'폼 설명'" json:"description"`
-	MainImageUrl string    `gorm:"column:main_image_url;type:varchar(255);comment:'메인이미지 주소'" json:"mainImageUrl"`
-	SubImageUrl  string    `gorm:"column:sub_image_url;type:varchar(255);comment:'서브이미지 주소'" json:"subImageUrl"`
-	ButtonText   string    `gorm:"column:button_text;type:varchar(255);comment:'버튼 문구'" json:"buttonText"`
-	ActiveYn     bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
-	CreatedAt    time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
-	UpdatedAt    time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+func (ApplicationItem) TableName() string {
+	return "application_items"
 }
 
 // ApplicationItem ApplicationForm 중간 테이블
-type ApplicationItemApplicationForm struct {
+type ChannelApplicationItem struct {
 	ID                uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	ApplicationItemID uint      `gorm:"column:application_item_id;not null;type:int;comment:'항목 ID';index" json:"applicationItemId"`
-	ApplicationFormID uint      `gorm:"column:application_form_id;not null;type:int;comment:'폼 ID';index" json:"applicationFormId"`
+	ChannelID         uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
 	CreatedAt         time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
 	UpdatedAt         time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+}
+
+func (ChannelApplicationItem) TableName() string {
+	return "channel_application_items"
 }
