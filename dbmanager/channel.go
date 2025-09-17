@@ -13,6 +13,7 @@ type Channel struct {
 	IdAdminTeam      uint      `gorm:"column:id_admin_team;not null;type:int;comment:'배정 관리자 팀 ID'" json:"idAdminTeam"`
 	AssignmentMethod int8      `gorm:"column:assignment_method;not null;type:tinyint;default:0;comment:'배정 방법(0: 자동 순차, 1: 수동, 2: 팀 배정)'" json:"assignmentMethod"`
 	RepeatDbCheckYn  bool      `gorm:"column:repeat_db_check_yn;not null;type:boolean;default:false;comment:'중복 DB 체크 여부'" json:"repeatDbCheckYn"`
+	Title            string    `gorm:"column:title;not null;type:varchar(100);comment:'타이틀'" json:"title"`
 	MainImageUrl     string    `gorm:"column:main_image_url;type:varchar(255);comment:'메인이미지 주소'" json:"mainImageUrl"`
 	SubImageUrl      string    `gorm:"column:sub_image_url;type:varchar(255);comment:'서브이미지 주소'" json:"subImageUrl"`
 	ButtonText       string    `gorm:"column:button_text;type:varchar(255);comment:'버튼 문구'" json:"buttonText"`
