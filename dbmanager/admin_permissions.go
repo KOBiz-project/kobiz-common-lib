@@ -102,6 +102,7 @@ type MenuPermission struct {
 	gorm.Model
 	IDMenuCategory uint   `gorm:"column:id_menu_category;not null" json:"idMenuCategory" comment:"메뉴분류인덱스"`
 	Name           string `gorm:"column:name;type:varchar(100);not null" json:"name" comment:"권한명"`
+	Code           string `gorm:"column:code;type:varchar(100);not null;unique" json:"code" comment:"권한코드"`
 	Desc           string `gorm:"column:desc;type:varchar(255);default:''" json:"desc" comment:"설명"`
 	ActiveYn       bool   `gorm:"column:active_yn;type:boolean;default:false" json:"active_yn" comment:"활성여부"`
 }
