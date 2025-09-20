@@ -4,7 +4,7 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
+    "scrollTop": -1325,
     "scrollLeft": -249.4966,
     "zoomLevel": 1,
     "show": 431,
@@ -38,8 +38,6 @@
       "application_items",
       "channel_application_items",
       "channel_bbss",
-      "admin_role_permissions",
-      "user_specific_permissions",
       "menu_categories",
       "menu_permissions",
       "level_permissions",
@@ -56,7 +54,6 @@
       "rel_channel_application_items_channels",
       "rel_channel_bbss_channels",
       "rel_channel_bbss_admin_members",
-      "rel_user_specific_permissions_admin_members",
       "rel_menu_permissions_menu_categories",
       "rel_level_permissions_menu_permissions_level_permissions",
       "rel_level_permissions_menu_permissions_menu_permissions",
@@ -519,15 +516,15 @@
           "menu_permissions_deleted_at"
         ],
         "ui": {
-          "x": 1696,
-          "y": 874,
+          "x": 1655,
+          "y": 962,
           "zIndex": 11,
           "widthName": 100,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1758348664715,
+          "updateAt": 1758349010480,
           "createAt": 1757334399167
         }
       },
@@ -2274,7 +2271,7 @@
         "default": "",
         "options": 8,
         "ui": {
-          "keys": 2,
+          "keys": 0,
           "widthName": 100,
           "widthComment": 80,
           "widthDataType": 60,
@@ -3958,8 +3955,8 @@
           "columnIds": [
             "menu_permissions_id_menu_category"
           ],
-          "x": 1696,
-          "y": 942,
+          "x": 1655,
+          "y": 1030,
           "direction": 1
         },
         "meta": {
@@ -4005,8 +4002,8 @@
           "columnIds": [
             "menu_permissions_id"
           ],
-          "x": 1696,
-          "y": 1078,
+          "x": 1655,
+          "y": 1166,
           "direction": 1
         },
         "end": {
