@@ -1,0 +1,89 @@
+,
+      "mg_id": {
+        "id": "mg_id",
+        "tableId": "member_group_id",
+        "name": "id",
+        "comment": "회원 그룹 ID",
+        "dataType": "INT",
+        "default": "",
+        "options": 11,
+        "ui": {"keys": 1, "widthName": 60, "widthComment": 80, "widthDataType": 60, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000300, "createAt": 1757400000300}
+      },
+      "mg_name_group": {
+        "id": "mg_name_group",
+        "tableId": "member_group_id",
+        "name": "name_group",
+        "comment": "그룹명",
+        "dataType": "VARCHAR(255)",
+        "default": "",
+        "options": 8,
+        "ui": {"keys": 0, "widthName": 70, "widthComment": 60, "widthDataType": 81, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000301, "createAt": 1757400000301}
+      },
+      "mg_custom_add_subsidy_name": {
+        "id": "mg_custom_add_subsidy_name",
+        "tableId": "member_group_id",
+        "name": "custom_add_subsidy_name",
+        "comment": "추가 지원금 별칭",
+        "dataType": "VARCHAR(255)",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 120, "widthComment": 90, "widthDataType": 81, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000302, "createAt": 1757400000302}
+      },
+      "mg_inquiry_tel": {
+        "id": "mg_inquiry_tel",
+        "tableId": "member_group_id",
+        "name": "inquiry_tel",
+        "comment": "문의 번호",
+        "dataType": "VARCHAR(255)",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 70, "widthComment": 60, "widthDataType": 81, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000303, "createAt": 1757400000303}
+      },
+      "mg_memo": {
+        "id": "mg_memo",
+        "tableId": "member_group_id",
+        "name": "memo",
+        "comment": "메모",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 60, "widthComment": 60, "widthDataType": 60, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000304, "createAt": 1757400000304}
+      },
+      "mg_created_at": {
+        "id": "mg_created_at",
+        "tableId": "member_group_id",
+        "name": "created_at",
+        "comment": "등록일시",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 60, "widthComment": 60, "widthDataType": 60, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000305, "createAt": 1757400000305}
+      },
+      "mg_updated_at": {
+        "id": "mg_updated_at",
+        "tableId": "member_group_id",
+        "name": "updated_at",
+        "comment": "수정일시",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 60, "widthComment": 60, "widthDataType": 60, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000306, "createAt": 1757400000306}
+      },
+      "mg_deleted_at": {
+        "id": "mg_deleted_at",
+        "tableId": "member_group_id",
+        "name": "deleted_at",
+        "comment": "삭제일시",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 0,
+        "ui": {"keys": 0, "widthName": 60, "widthComment": 60, "widthDataType": 60, "widthDefault": 60},
+        "meta": {"updateAt": 1757400000307, "createAt": 1757400000307}
+      }
