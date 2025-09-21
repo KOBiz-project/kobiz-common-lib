@@ -1,8 +1,6 @@
 package dbmanager
 
 import (
-	"time"
-
 	"gorm.io/gorm"
 )
 
@@ -24,25 +22,21 @@ func (AdminMember) TableName() string {
 	return "admin_members"
 }
 
-type AdminMemberPermission struct {
-	ID                uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	IdAdminMember     uint      `gorm:"column:id_admin_member;not null;comment:'관리자 번호'" json:"idAdminMember"`
-	IdLevelPermission uint      `gorm:"column:id_level_permission;not null;comment:'레벨별 권한 번호'" json:"idLevelPermission"`
-	ActiveYn          bool      `gorm:"default:false;comment:'활성화 여부'" json:"activeYn"`
-	CreatedAt         time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
-	UpdatedAt         time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+type AdminMemberLevelPermissionMenuPermission struct {
+	gorm.Model
+	IdAdminMember                   uint `gorm:"column:id_admin_member;comment:'관리자 멤버 번호'" json:"idAdminMember"`
+	IdLevelPermissionMenuPermission uint `gorm:"column:id_level_permission_menu_permission;comment:'레벨별 권한 메뉴 권한 번호'" json:"idLevelPermissionMenuPermission"`
+	UseYn                           bool `gorm:"column:use_yn;default:false;comment:'사용 여부'" json:"useYn"`
 }
 
-func (AdminMemberPermission) TableName() string {
-	return "admin_member_permissions"
+func (AdminMemberLevelPermissionMenuPermission) TableName() string {
+	return "admin_member_menu_permissions"
 }
 
 type AdminTeam struct {
 	gorm.Model
-	// TeamName 팀 이름
 	TeamName string `gorm:"column:team_name;not null;type:varchar(255);comment:'팀 이름'" json:"teamName"`
-	// activeYn 활성화 여부
-	ActiveYn bool `gorm:"column:active_yn;default:false;comment:'활성화 여부'" json:"activeYn"`
+	ActiveYn bool   `gorm:"column:active_yn;default:false;comment:'활성화 여부'" json:"activeYn"`
 }
 
 // TableName AdminTeam 테이블명 반환
