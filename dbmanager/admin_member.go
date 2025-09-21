@@ -26,7 +26,7 @@ type AdminMemberLevelPermissionMenuPermission struct {
 	gorm.Model
 	IdAdminMember                   uint `gorm:"column:id_admin_member;comment:'관리자 멤버 번호'" json:"idAdminMember"`
 	IdLevelPermissionMenuPermission uint `gorm:"column:id_level_permission_menu_permission;comment:'레벨별 권한 메뉴 권한 번호'" json:"idLevelPermissionMenuPermission"`
-	UseYn                           bool `gorm:"column:use_yn;default:false;comment:'사용 여부'" json:"useYn"`
+	ActiveYn                        bool `gorm:"column:use_yn;default:false;comment:'사용 여부'" json:"activeYn"`
 }
 
 func (AdminMemberLevelPermissionMenuPermission) TableName() string {
