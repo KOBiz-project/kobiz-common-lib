@@ -30,7 +30,7 @@ type AdminMemberLevelPermissionMenuPermission struct {
 }
 
 func (AdminMemberLevelPermissionMenuPermission) TableName() string {
-	return "admin_member_menu_permissions"
+	return "admin_member_level_permission_menu_permissions"
 }
 
 type AdminTeam struct {
