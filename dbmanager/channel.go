@@ -56,9 +56,10 @@ func (ChannelChannelGroup) TableName() string {
 // 신청서 항목 설정 테이블
 type ApplicationItem struct {
 	ID           uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	ChannelID    uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
 	Name         string    `gorm:"column:name;not null;type:varchar(100);comment:'항목명'" json:"name"`
 	Description  string    `gorm:"column:description;type:varchar(255);comment:'항목 설명'" json:"description"`
-	Type         int8      `gorm:"column:type;not null;type:tinyint;comment:'항목 타입(0: 텍스트, 1: 숫자, 2: 날짜, 3: 체크박스, 4: 라디오, 5: 드롭다운)'" json:"type"`
+	Type         int8      `gorm:"column:type;not null;type:tinyint;comment:'항목 타입(1: 고객명, 2: 고객 연락처, 2: 날짜, 3: 체크박스, 4: 라디오, 5: 드롭다운)'" json:"type"`
 	TypeRequired bool      `gorm:"column:type_required;not null;type:boolean;default:false;comment:'항목 필수 여부'" json:"typeRequired"`
 	ActiveYn     bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
 	CreatedAt    time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
@@ -67,19 +68,6 @@ type ApplicationItem struct {
 
 func (ApplicationItem) TableName() string {
 	return "application_items"
-}
-
-// ApplicationItem ApplicationForm 중간 테이블
-type ChannelApplicationItem struct {
-	ID                uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	ApplicationItemID uint      `gorm:"column:application_item_id;not null;type:int;comment:'항목 ID';index" json:"applicationItemId"`
-	ChannelID         uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
-	CreatedAt         time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
-	UpdatedAt         time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
-}
-
-func (ChannelApplicationItem) TableName() string {
-	return "channel_application_items"
 }
 
 type ChannelBbs struct {
