@@ -8,7 +8,6 @@ import (
 type Channel struct {
 	ID               uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	Name             string    `gorm:"column:name;not null;type:varchar(100);comment:'채널명';uniqueIndex:idx_channel_name" json:"name"`
-	Code             string    `gorm:"column:code;not null;type:varchar(100);comment:'채널 코드';uniqueIndex:idx_channel_code" json:"code"`
 	Description      string    `gorm:"column:description;type:varchar(255);comment:'채널 설명'" json:"description"`
 	AssignmentMethod int8      `gorm:"column:assignment_method;not null;type:tinyint;default:0;comment:'배정 방법(0: 자동 순차, 1: 수동, 2: 팀 배정)'" json:"assignmentMethod"`
 	ActiveYn         bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
