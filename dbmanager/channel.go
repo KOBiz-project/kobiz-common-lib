@@ -61,22 +61,25 @@ func (ChannelChannelGroup) TableName() string {
 
 // 인입 채널 테이블 (채널 당 각 게시판)
 type InqueryChannel struct {
-	ID             uint      `gorm:"primaryKey;autoIncrement" json:"id"`
-	ChannelID      uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
-	Name           string    `gorm:"column:name;not null;type:varchar(100);comment:'인입 채널명'" json:"name"`
-	Code           string    `gorm:"column:code;not null;type:varchar(100);comment:'채널 코드';uniqueIndex:idx_inquery_channels_code" json:"code"`
-	MainImageUrl   string    `gorm:"column:main_image_url;type:varchar(255);comment:'메인이미지 주소'" json:"mainImageUrl"`
-	SubImageUrl    string    `gorm:"column:sub_image_url;type:varchar(255);comment:'서브이미지 주소'" json:"subImageUrl"`
-	Description    string    `gorm:"column:description;type:varchar(255);comment:'채널 설명'" json:"description"`
-	Title          string    `gorm:"column:title;not null;type:varchar(100);comment:'타이틀'" json:"title"`
-	InputName      string    `gorm:"column:input_name;not null;type:varchar(100);comment:'고객명 입력 항목명'" json:"inputName"`
-	InputNameDesc  string    `gorm:"column:input_name_desc;type:varchar(255);comment:'고객명 입력 항목 설명'" json:"inputNameDesc"`
-	InputPhone     string    `gorm:"column:input_phone;not null;type:varchar(100);comment:'고객 연락처 입력 항목명'" json:"inputPhone"`
-	InputPhoneDesc string    `gorm:"column:input_phone_desc;type:varchar(255);comment:'고객 연락처 입력 항목 설명'" json:"inputPhoneDesc"`
-	ButtonText     string    `gorm:"column:button_text;type:varchar(255);comment:'버튼 문구'" json:"buttonText"`
-	ActiveYn       bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
-	CreatedAt      time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
-	UpdatedAt      time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+	ID                 uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	ChannelID          uint      `gorm:"column:channel_id;not null;type:int;comment:'채널 ID';index" json:"channelId"`
+	Name               string    `gorm:"column:name;not null;type:varchar(100);comment:'인입 채널명'" json:"name"`
+	Code               string    `gorm:"column:code;not null;type:varchar(100);comment:'채널 코드';uniqueIndex:idx_inquery_channels_code" json:"code"`
+	MainImageUrl       string    `gorm:"column:main_image_url;type:varchar(255);comment:'메인이미지 주소'" json:"mainImageUrl"`
+	SubImageUrl        string    `gorm:"column:sub_image_url;type:varchar(255);comment:'서브이미지 주소'" json:"subImageUrl"`
+	Description        string    `gorm:"column:description;type:varchar(255);comment:'인입 채널 설명'" json:"description"`
+	NameYoutubeChannel string    `gorm:"column:name_youtube_channel;type:varchar(100);comment:'유튜브 채널명'" json:"nameYoutubeChannel"`
+	UrlYoutubeChannel  string    `gorm:"column:url_youtube_channel;type:varchar(255);comment:'유튜브 채널 URL'" json:"urlYoutubeChannel"`
+	PhoneNumber        string    `gorm:"column:phone_number;type:varchar(20);comment:'대표번호'" json:"phoneNumber"`
+	Title              string    `gorm:"column:title;not null;type:varchar(100);comment:'타이틀'" json:"title"`
+	InputName          string    `gorm:"column:input_name;not null;type:varchar(100);comment:'고객명 입력 항목명'" json:"inputName"`
+	InputNameDesc      string    `gorm:"column:input_name_desc;type:varchar(255);comment:'고객명 입력 항목 설명'" json:"inputNameDesc"`
+	InputPhone         string    `gorm:"column:input_phone;not null;type:varchar(100);comment:'고객 연락처 입력 항목명'" json:"inputPhone"`
+	InputPhoneDesc     string    `gorm:"column:input_phone_desc;type:varchar(255);comment:'고객 연락처 입력 항목 설명'" json:"inputPhoneDesc"`
+	ButtonText         string    `gorm:"column:button_text;type:varchar(255);comment:'버튼 문구'" json:"buttonText"`
+	ActiveYn           bool      `gorm:"column:active_yn;not null;type:boolean;default:true;comment:'활성 여부'" json:"activeYn"`
+	CreatedAt          time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
+	UpdatedAt          time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
 }
 
 func (InqueryChannel) TableName() string {
