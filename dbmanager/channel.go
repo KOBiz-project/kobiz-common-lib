@@ -102,3 +102,33 @@ type ApplicationItem struct {
 func (ApplicationItem) TableName() string {
 	return "application_items"
 }
+
+// 팀별 배정 순서 및 수량
+type ChannelTeamOrder struct {
+	ID                uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	AdminTeamID       uint      `gorm:"column:admin_team_id;not null;type:int;comment:'팀 ID';index" json:"adminTeamId"`
+	Order             int8      `gorm:"column:order;not null;type:tinyint;comment:'배정 순서'" json:"order"`
+	InqueryChannelID  uint      `gorm:"column:inquery_channel_id;not null;type:int;comment:'인입 채널 ID';index" json:"inqueryChannelId"`
+	Quantity          int8      `gorm:"column:quantity;not null;type:tinyint;comment:'인입 채널별 배정 수량'" json:"quantity"`
+	ProcessedQuantity int8      `gorm:"column:processed_quantity;not null;type:tinyint;comment:'처리 수량'" json:"processedQuantity"`
+	CreatedAt         time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
+	UpdatedAt         time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+}
+
+func (ChannelTeamOrder) TableName() string {
+	return "channel_team_orders"
+}
+
+// 팀별 일별 배정 처리 현황
+type ChannelTeamAssignment struct {
+	ID                 uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	ChannelTeamOrderID uint      `gorm:"column:channel_team_order_id;not null;type:int;comment:'팀별 배정 순서 ID';index" json:"channelTeamOrderId"`
+	ProcessedQuantity  int8      `gorm:"column:processed_quantity;not null;type:tinyint;comment:'처리 수량'" json:"processedQuantity"`
+	AssignmentDate     time.Time `gorm:"column:assignment_date;not null;type:date;comment:'배정일'" json:"assignmentDate"`
+	CreatedAt          time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
+	UpdatedAt          time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+}
+
+func (ChannelTeamAssignment) TableName() string {
+	return "channel_team_assignments"
+}

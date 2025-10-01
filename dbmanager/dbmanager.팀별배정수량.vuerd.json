@@ -62,8 +62,16 @@
         "id": "KRhvyU8SvLAWh8z3VjvlH",
         "name": "",
         "comment": "팀별 배정 수량",
-        "columnIds": [],
-        "seqColumnIds": [],
+        "columnIds": [
+          "FrqiT89tO-v71xDAWmiP3",
+          "zYm4aZzKflw8Uy_S6X350",
+          "zkCFFpO5_6jpiyX0EJhAw"
+        ],
+        "seqColumnIds": [
+          "FrqiT89tO-v71xDAWmiP3",
+          "zYm4aZzKflw8Uy_S6X350",
+          "zkCFFpO5_6jpiyX0EJhAw"
+        ],
         "ui": {
           "x": 392,
           "y": 210,
@@ -73,12 +81,73 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1759236815818,
+          "updateAt": 1759318666447,
           "createAt": 1759236792903
         }
       }
     },
-    "tableColumnEntities": {},
+    "tableColumnEntities": {
+      "FrqiT89tO-v71xDAWmiP3": {
+        "id": "FrqiT89tO-v71xDAWmiP3",
+        "tableId": "KRhvyU8SvLAWh8z3VjvlH",
+        "name": "아이디 팀",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1759237296694,
+          "createAt": 1759237268867
+        }
+      },
+      "zYm4aZzKflw8Uy_S6X350": {
+        "id": "zYm4aZzKflw8Uy_S6X350",
+        "tableId": "KRhvyU8SvLAWh8z3VjvlH",
+        "name": "아이디 채널",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1759318990455,
+          "createAt": 1759237283973
+        }
+      },
+      "zkCFFpO5_6jpiyX0EJhAw": {
+        "id": "zkCFFpO5_6jpiyX0EJhAw",
+        "tableId": "KRhvyU8SvLAWh8z3VjvlH",
+        "name": "아이디 채널",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1759318987029,
+          "createAt": 1759318666446
+        }
+      }
+    },
     "relationshipEntities": {},
     "indexEntities": {},
     "indexColumnEntities": {},
