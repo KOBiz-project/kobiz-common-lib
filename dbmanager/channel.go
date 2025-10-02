@@ -86,6 +86,19 @@ func (InqueryChannel) TableName() string {
 	return "inquery_channels"
 }
 
+// 채널 그룹 인입 채널 테이블
+type ChannelGroupInqueryChannel struct {
+	ID               uint      `gorm:"primaryKey;autoIncrement" json:"id"`
+	ChannelGroupID   uint      `gorm:"column:channel_group_id;not null;type:int;comment:'채널 그룹 ID';index" json:"channelGroupId"`
+	InqueryChannelID uint      `gorm:"column:inquery_channel_id;not null;type:int;comment:'인입 채널 ID';index" json:"inqueryChannelId"`
+	CreatedAt        time.Time `gorm:"column:created_at;not null;type:datetime;comment:'생성일';default:CURRENT_TIMESTAMP" json:"createdAt"`
+	UpdatedAt        time.Time `gorm:"column:updated_at;not null;type:datetime;comment:'수정일';default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" json:"updatedAt"`
+}
+
+func (ChannelGroupInqueryChannel) TableName() string {
+	return "channel_group_inquery_channels"
+}
+
 // 신청서 항목 설정 테이블 (삭제)
 type ApplicationItem struct {
 	ID           uint      `gorm:"primaryKey;autoIncrement" json:"id"`
